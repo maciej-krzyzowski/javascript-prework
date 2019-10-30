@@ -1,14 +1,12 @@
-var argButtonName, buttonPaper, buttonRock, buttonScissors;
-
-buttonRock = document.getElementById('button-rock');
-buttonPaper = document.getElementById('button-paper');
-buttonScissors = document.getElementById('button-scissors');
+const buttonRock = document.getElementById('button-rock');
+const buttonPaper = document.getElementById('button-paper');
+const buttonScissors = document.getElementById('button-scissors');
 
 function buttonClicked(argButtonName) {
     clearMessages();
     console.log(argButtonName + ' został kliknięty');
     playerMove = argButtonName;
-    console.log('wybór ruchu gracza to: ' + playerInput);
+    console.log('wybór ruchu gracza to: ' + playerMove);
     playerMove = argButtonName;
     console.log('ruch gracza to: ' + playerMove);
     randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -19,7 +17,7 @@ function buttonClicked(argButtonName) {
 }
 
 function printMessage(msg) {
-    var div = document.createElement('div');
+    const div = document.createElement('div');
     div.innerHTML = msg;
     document.getElementById('messages').appendChild(div);
 }
@@ -27,8 +25,6 @@ function printMessage(msg) {
 function clearMessages() {
     document.getElementById('messages').innerHTML = '';
 }
-
-var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
 
 function getMoveName(argMoveId) {
     console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
