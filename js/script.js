@@ -1,11 +1,14 @@
 const buttonRock = document.getElementById('button-rock');
 const buttonPaper = document.getElementById('button-paper');
 const buttonScissors = document.getElementById('button-scissors');
+let playerMove;
+let computerMove;
+let randomNumber;
+let playerScore = 0;
+let computerScore = 0;
 
 function buttonClicked(argButtonName) {
     clearMessages();
-    console.log(argButtonName + ' został kliknięty');
-    playerMove = argButtonName;
     console.log('wybór ruchu gracza to: ' + playerMove);
     playerMove = argButtonName;
     console.log('ruch gracza to: ' + playerMove);
@@ -14,6 +17,7 @@ function buttonClicked(argButtonName) {
     computerMove = getMoveName(randomNumber);
     console.log('ruch komputera to: ' + computerMove);
     displayResult(playerMove, computerMove);
+    showResult();
 }
 
 function printMessage(msg) {
@@ -40,17 +44,34 @@ function getMoveName(argMoveId) {
     }
 }
 
+function calculateScore(whoWin) {
+    if (whoWin === "player") {
+        playerScore = playerScore + 1;
+    }
+    if (whoWin === "computer") {
+        computerScore = computerScore + 1;
+    }
+}
+
+function showResult() {
+    printMessage("Gracz " + playerScore + ":" + computerScore + " Komputer")
+}
+
 function displayResult(argPlayerMove, argComputerMove) {
     console.log(argPlayerMove + argComputerMove);
     if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+        calculateScore('player');
         printMessage('Wygrywasz!');
     } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
+        calculateScore('player');
         printMessage('Wygrywasz!');
     } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
+        calculateScore('player');
         printMessage('Wygrywasz!');
     } else if (argPlayerMove == argComputerMove) {
         printMessage('Remis!');
     } else {
+        calculateScore('computer');
         printMessage('Przegrywasz :(');
     }
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
