@@ -1,1 +1,1 @@
-DEMO: https://maciej-krzyzowski.github.io/RockPaperScissors-js/
+DEMO: https://maciejkrzyzowski.pl/rockPaperScissors/
