@@ -1,40 +1,82 @@
-body {
-    margin: 0;
-}
+body { margin: 0; font-family: 'Roboto', sans-serif; color: #fff; font-size: 45px; background-color: #fede79; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: start; align-items: flex-start; }
 
-.game {
-    position: relative;
-    height: 100vh;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-image: url("https://i.postimg.cc/nr9Hgpdm/papier-kamien-nozyce.jpg");
-    background-color: rgba(0, 0, 0);
-}
+.game { position: relative; height: 100vh; width: 100vw; }
 
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.container { width: 1140px; margin: 0 auto; }
 
-.buttons-section {
-    text-align: center;
-    padding: 75px 0;
-}
+.img { position: absolute; bottom: 0; left: 0; right: 0; z-index: -1; width: 70%; margin: 0 auto; }
 
-.button {
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    border: solid 2px;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 0 10px;
-}
+.title { text-align: center; margin: 50px 0; }
 
-.messages-section {
-    font-size: 40px;
-    text-align: center;
-    color: white;
-}
+.buttons-section { text-align: center; padding: 25px 0 50px; }
+
+.button { background-color: #00000000; font-size: 55px; color: #fff; border: solid 3px; border-radius: 10px; padding: 15px 20px; margin: 0 40px; }
+
+.button:focus { outline: none; }
+
+.button:hover { cursor: pointer; color: #9A8980; border-color: #9A8980; }
+
+.players { display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; -ms-flex-pack: center; justify-content: center; text-transform: uppercase; }
+
+.player__column { width: 35%; text-align: center; }
+
+.result { width: 30%; text-align: center; }
+
+.computer--result, .player--result { font-size: 35px; margin-top: 20px; color: #fff; }
+
+.modal { position: fixed; height: 100vh; width: 100vw; display: none; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; -ms-flex-direction: column; flex-direction: column; top: 0; bottom: 0; left: 0; right: 0; background-color: #00000099; }
+
+.modal--active { display: -ms-flexbox; display: flex; }
+
+.modal__container { width: 60%; height: 30%; background-color: #fede79; border: 3px solid #fff; border-radius: 10px; padding: 25px 15px; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; -ms-flex-direction: column; flex-direction: column; }
+
+.modal__title { font-size: 40px; text-align: center; }
+
+.modal__input { height: 30px; width: 250px; border-radius: 10px; border: none; padding: 10px; font-size: 20px; text-transform: uppercase; }
+
+.modal__input:focus { outline: none; }
+
+.modal__button { height: 50px; width: 100px; border-radius: 10px; border: none; font-size: 20px; margin-left: 15px; background-color: #9A8980; color: #fff; transition: 0.3s; }
+
+.modal__button--winner { height: 75px; width: 200px; font-size: 24px; }
+
+.modal__button:focus { outline: none; }
+
+.modal__button:hover { color: #9A8980; background-color: #fff; }
+
+.modal__warning { color: #ff0000; font-size: 18px; }
+
+@media (max-width: 1140px) { .container { width: 90%; }
+  .button { font-size: 60px; }
+  .img { width: 100%; } }
+
+@media (max-width: 768px) { body { font-size: 30px; }
+  .title { font-size: 45px; }
+  .buttons-section { padding: 0 0 50px; }
+  .button { font-size: 30px; padding: 12px 16px; }
+  .button:focus { outline: none; color: #fff; border-color: #fff; }
+  .computer--result, .player--result { font-size: 28px; margin-top: 15px; }
+  .img { bottom: 50px; }
+  .modal__container { width: 85%; }
+  .modal__title { font-size: 35px; }
+  .modal__input { width: 200px; font-size: 18px; }
+  .modal__button { height: 50px; width: 75px; font-size: 18px; }
+  .modal__button--winner { width: 200px; } }
+
+@media (max-width: 576px) { body { font-size: 20px; }
+  .game { width: 100vw; max-height: 100vh; }
+  .container { width: 90%; }
+  .title { font-size: 35px; }
+  .buttons-section { padding: 0 0 50px; }
+  .button { margin: 0 15px; }
+  .computer--result, .player--result { font-size: 18px; margin-top: 15px; }
+  .img { bottom: 50px; } }
+
+@media (max-width: 330px) { body { font-size: 18px; }
+  .title { font-size: 25px; }
+  .buttons-section { padding: 0 0 30px; }
+  .button { font-size: 25px; padding: 10px 14px; margin: 0 10px; }
+  .modal__title { font-size: 30px; }
+  .modal__input { width: 175px; font-size: 16px; }
+  .modal__button { width: 60px; font-size: 16px; }
+  .modal__button--winner { width: 175px; } }

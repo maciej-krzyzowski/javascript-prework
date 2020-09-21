@@ -4,23 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Kamień, papier, nożyce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
 </head>
 
 <body>
     <section class="game">
         <div class="container">
+            <h1 class="title">RockPaperScissors</h1>
             <div class="buttons-section" id="buttons">
-                <button class="button" id="button-rock">Kamień</button>
-                <button class="button" id="button-paper">Papier</button>
-                <button class="button" id="button-scissors">Nożyce</button>
+                <button class="button" id="button-rock"><i class="fas fa-hand-rock"></i></button>
+                <button class="button" id="button-paper"><i class="fas fa-hand-paper"></i></button>
+                <button class="button" id="button-scissors"><i class="fas fa-hand-scissors"></i></button>
             </div>
-            <div class="messages-section" id="messages"></div>
+            <div class="players">
+                <div class="player__column">
+                    <div class="player">GRACZ</div>
+                    <div class="player--result"></div>
+                </div>
+                <div class="result">0 : 0</div>
+                <div class="player__column">
+                    <div class="computer">PRZECIWNIK</div>
+                    <div class="computer--result"></div>
+                </div>
+            </div>
+            <img src="./img/background.jpg" class="img" alt="">
         </div>
-
-        <script src="js/functions.js"></script>
-        <script src="js/script.js"></script>
     </section>
+
+    <div class="modal modal--active">
+        <div class="modal__container"></div>
+    </div>
+
+    <script src="js/functions.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
